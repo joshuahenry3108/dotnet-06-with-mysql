@@ -6,7 +6,7 @@ using System.Text;
 namespace dotnet06.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     public class UserController : ControllerBase
     {
         private static List<User> _users = new List<User>();

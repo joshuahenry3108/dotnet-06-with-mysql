@@ -26,6 +26,8 @@ var dbUser = builder.Configuration["DATABASE_USER"]
 var dbPassword = builder.Configuration["DATABASE_PASSWORD"]
     ?? throw new InvalidOperationException("Environment variable 'DATABASE_PASSWORD' is not set.");
 
+var baseUrl = builder.Configuration["BASE_URL"] ?? "/api/";
+
 // Build the connection string
 var connectionString = $"Server={dbHost};Port={dbPort};Database={dbName};User={dbUser};Password={dbPassword};AllowPublicKeyRetrieval=True";
 
@@ -58,6 +60,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UsePathBase(baseUrl);
+app.UseRouting();
 // Map controllers
 app.MapControllers();
 app.Run();
