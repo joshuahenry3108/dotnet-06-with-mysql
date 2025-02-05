@@ -20,7 +20,7 @@ poddle:
           memory: 1
           storage: 50
           engine: "mysql"
-          version: "8"
+          version: "8.0.33"
       variables:
         BASE_URL: /api/v1
         DATABASE_URL: "#{dbUrl}"
