@@ -1,7 +1,7 @@
 revolte:
   version: "1.0"
-  project: "threads"
-  appName: "subscription"
+  project: "Ares"
+  appName: "be-dotnet-mysql"
   env:
     staging:
       branch: main
