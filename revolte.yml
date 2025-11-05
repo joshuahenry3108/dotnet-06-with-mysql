@@ -11,6 +11,9 @@ revolte:
   env:
     staging:
       branch: main
+      codeReview: false
+      codeQuality: false
+      testSuite: false
       services:
         rid_1:
           type: WEB_SERVICE
@@ -68,11 +71,14 @@ revolte:
           name: db
           specifications:
             cpu: 2
-            memory: 1
+            memory: 4
             storage: 30
             engine: mysql
     production:
       branch: main
+      codeReview: false
+      codeQuality: false
+      testSuite: false
       services:
         rid_1:
           type: WEB_SERVICE
@@ -105,6 +111,9 @@ revolte:
             storage: 30
             engine: mysql
     preview:
+      codeReview: false
+      codeQuality: false
+      testSuite: false
       services:
         rid_1:
           type: WEB_SERVICE
