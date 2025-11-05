@@ -1,7 +1,13 @@
 revolte:
   version: '1.0'
-  project: dark knight
-  appName: dotnetsecond
+  project: BuildCore
+  appName: dotnetapp
+  config:
+    codeQuality:
+      codeStyle:
+        rules:
+          CA1000: warn
+          CA1001: warn
   env:
     staging:
       branch: main
@@ -34,6 +40,9 @@ revolte:
             engine: mysql
     qa:
       branch: main
+      codeReview: false
+      codeQuality: true
+      testSuite: false
       services:
         rid_1:
           type: WEB_SERVICE
