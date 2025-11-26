@@ -1,7 +1,7 @@
 revolte:
   version: '1.0'
-  project: BuildCore
-  appName: dotnetapp
+  project: ALB Project
+  appName: first-dotnet
   config:
     codeQuality:
       codeStyle:
@@ -29,9 +29,16 @@ revolte:
               DATABASE_USERNAME: '#{db.dbUsername}'
               DATABASE_PASSWORD: '#{db.dbPassword}'
               DATABASE_NAME: '#{db.dbName}'
+              THIRD_PARTY_URL: https://testtt.requestcatcher.com/
+            loadBalancerMode: shared
+          insights:
+            cpu:
+              - cpu_time_idle
+              - cpu_time_user
+              - cpu_time_system
           specifications:
             cpu: 2
-            memory: 1
+            memory: 2
             storage: 30
         rid_2:
           type: DATABASE
@@ -61,7 +68,7 @@ revolte:
               DATABASE_USERNAME: '#{db.dbUsername}'
               DATABASE_PASSWORD: '#{db.dbPassword}'
               DATABASE_NAME: '#{db.dbName}'
-              THIRD_PARTY_URL: https://testtt.requestcatcher.com/
+            loadBalancerMode: dedicated
           specifications:
             cpu: 2
             memory: 4
@@ -94,6 +101,7 @@ revolte:
               DATABASE_USERNAME: '#{db.dbUsername}'
               DATABASE_PASSWORD: '#{db.dbPassword}'
               DATABASE_NAME: '#{db.dbName}'
+            loadBalancerMode: dedicated
           specifications:
             cpu: 2
             memory: 1
@@ -130,6 +138,7 @@ revolte:
               DATABASE_PASSWORD: '#{db.dbPassword}'
               DATABASE_NAME: '#{db.dbName}'
               THIRD_PARTY_URL: https://testtt.requestcatcher.com/
+            loadBalancerMode: dedicated
           specifications:
             cpu: 2
             memory: 1
